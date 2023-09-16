@@ -30,7 +30,7 @@ export default function AddSocials({ show }) {
                 <Form.Control placeholder="Copy and paste the url here" />
             </Form.Group>
             <button className="green-button mt-5">
-              Done
+              Continue
             </button>
           </Form>
         </div>

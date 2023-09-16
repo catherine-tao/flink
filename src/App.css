@@ -76,6 +76,7 @@ a {
   position: absolute;
   margin-top: 10%;
   margin-left: 3rem;
+  color: var(--yellow);
 }
 
 .flower-image-panel {
@@ -95,4 +96,9 @@ a {
   margin-bottom: 0 !important;
   font-family: 'Poppins';
   color: black;
+}
+
+.page-description {
+  color: var(--dark-green);
+  margin-bottom: 2rem;
 }

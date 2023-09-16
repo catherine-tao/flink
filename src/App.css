@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+:root {
+  --green: #517C60;
+  --dark-green: #364B3D;
+  --dark-pink: #FF8AF3;
+  --pink: #FFBFF9; 
+  --yellow: #FFE382;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #FF8AF3;
+  font-family: 'League Spartan';
+  font-weight: 400;
+  font-size: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+ color: black;
+ font-family: 'Poppins';
+ font-size: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.green-button {
+  background-color: var(--dark-green);
   color: white;
+  padding: 5px;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.background-green {
+  background-color: var(--green);
+  color: var(--dark-green);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.white-right-panel {
+  background-color: white;
+  color: black;
+  width: 70vw;
+  height: 100vh;
+  margin-left: auto;
+  border-radius: 30px 0px 0px 30px;
+
+}
+
+
+.green-left-panel-text {
+  max-width: 20%;
+  font-size: 18px;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 3rem;
+}
+
+.flower-image-panel {
+  position: fixed;
+  width: 40vw;
+  bottom: 0;
+  left: 10vw;
+}
+
+.white-panel-logo {
+  width: 10vw;
+  margin-top: 2rem;
+  margin-left: 2rem;
 }

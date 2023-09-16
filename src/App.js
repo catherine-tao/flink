@@ -8,6 +8,7 @@ import YourProfile from "./pages/yourProfile";
 import AddSocials from "./pages/addSocials";
 import ChooseCategory from "./pages/chooseCategory";
 import { BrowserRouter } from "react-router-dom";
+import DescribeYourself from "./pages/describeYourself";
 
 function App() {
   return (

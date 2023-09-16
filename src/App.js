@@ -5,6 +5,7 @@ import React, {useState} from "react"
 import Signup from './Signup';
 import Login from './pages/login';
 import YourProfile from './pages/yourProfile';
+import AddSocials from './pages/addSocials';
 import { BrowserRouter } from 'react-router-dom'
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <YourProfile/>
+        <AddSocials/>
       </div>
     </BrowserRouter>
   );

@@ -21,7 +21,7 @@ function Signup() {
 
   return (
     <div className="App">
-      <h1>FORM</h1>
+      <h1>Sign up</h1>
       <form onSubmit={handleSignup}>
         <h4>Email</h4>
         <input value={email} onChange={(e) => {

@@ -1,8 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import SignUp from './pages/signup'
+import Signup from './pages/signup'
 import React, {useState} from "react"
-import Signup from './Signup';
 import Prompt from './Prompt';
 import Login from './pages/login';
 import YourProfile from './pages/yourProfile';

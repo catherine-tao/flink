@@ -9,6 +9,7 @@ export default function Signup({ show }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [successfulSignup, setSuccessfulSignup] = useState(false);
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -23,6 +24,12 @@ export default function Signup({ show }) {
         password,
       }),
     });
+    
+
+    const resJson = await res.json();
+    if(resJson.userCreated){
+      setSuccessfulSignup(true)
+    }
   };
 
   return (
@@ -73,6 +80,10 @@ export default function Signup({ show }) {
             </Form.Group>
             <button className="green-button">Create Account</button>
           </Form>
+          {
+            successfulSignup &&
+            <h3>You've created an account!</h3>
+          }
           <p className="already-account">
             Already have an account? <Link to={"/"}>Sign in</Link>
           </p>

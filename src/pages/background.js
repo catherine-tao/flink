@@ -6,6 +6,7 @@ function Background() {
 
     const generate = async(e) => {
         e.preventDefault();
+        const email = "hi"
 
         console.log("reacched");
         
@@ -28,15 +29,15 @@ function Background() {
         console.log(backgroundUrl); 
         console.log(result.data[0].url); 
     
-        // const res = await fetch("http://localhost:3000/updateData", {
-        //     method: "PUT",
-        //     headers: {
-        //     "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         backgroundUrl,
-        //     }),
-        // });
+        const res = await fetch(`http://localhost:3000/updateData/${email}`, {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                backgroundUrl,
+            }),
+        });
 
     }
 

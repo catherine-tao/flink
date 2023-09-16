@@ -7,6 +7,7 @@ import Login from './pages/login';
 import YourProfile from './pages/yourProfile';
 import AddSocials from './pages/addSocials';
 import { BrowserRouter } from 'react-router-dom'
+import Background from './pages/background';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Signup />
         <Login />
         <Prompt />
+        <Background />
       </div>
     </BrowserRouter>
   );

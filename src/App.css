@@ -50,6 +50,10 @@ a {
   text-align: center;
 }
 
+.forgot-password {
+  color: var(--green) !important;
+}
+
 .background-green {
   background-color: var(--green);
   color: var(--dark-green);

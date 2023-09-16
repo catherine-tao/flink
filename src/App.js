@@ -17,6 +17,7 @@ function App() {
         <AddSocials />
         <Signup />
         <Login />
+        <DescribeYourself/>
       </div>
     </BrowserRouter>
   );

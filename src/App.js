@@ -4,6 +4,7 @@ import SignUp from './pages/signup'
 import React, {useState} from "react"
 import Signup from './Signup';
 import Login from './Login';
+import Prompt from './Prompt';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Signup />
       <Login />
+      <Prompt />
     </div>
   );
 }

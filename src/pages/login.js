@@ -87,7 +87,7 @@ export default function Login({ show }) {
           </div>
         </div>
       )}
-      {allowProceed && <Prompt />}
+      {allowProceed && <Prompt email={email}/>}
     </div>
   );
 }

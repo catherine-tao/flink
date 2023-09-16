@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-function Prompt() {
+function Prompt({email}) {
   const [promptURL, setPromptURL] = useState("");
-  const email = "hi"
   const handlePromptSubmit = async(e) => {
     e.preventDefault();
     console.log("promptURL", promptURL)

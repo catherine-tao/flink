@@ -23,8 +23,12 @@ export default function SignUp({ show }) {
               <Form.Label>Username</Form.Label>
               <Form.Control type="email" placeholder="flink/your-username.com" />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="email" placeholder="Choose a password" />
+            </Form.Group>
             <button className="green-button">
-              Submit
+              Create Account
             </button>
           </Form>
             <p className="already-account">Already have an account? <Link to={"/"}>Sign in</Link></p>

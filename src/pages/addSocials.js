@@ -5,7 +5,8 @@ import Logo from "../assets/Logo.svg"
 import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 
-export default function SignUp({ show }) {
+
+export default function AddSocials({ show }) {
   return (
     <div className="background-green vh-100">
       <h2 className="green-left-panel-text">Flink helps generate personal landing pages to make your content appealing.</h2>
@@ -13,25 +14,25 @@ export default function SignUp({ show }) {
       <div className="white-right-panel">
         <img className="white-panel-logo" src={Logo}/>
         <div className="w-50 mt-5 mx-auto">
-          <h1 className="h1-pink">Join Flink</h1>
+          <h1 className="h1-pink mb-0">Add links to your socials</h1>
+          <p className="page-description">Let your audience easily find you.</p>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter your email" />
+            <Form.Group className="mb-3">
+                <Form.Label>Instagram</Form.Label>
+                <Form.Control placeholder="Copy and paste the url here"/>
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Username</Form.Label>
-              <Form.Control type="email" placeholder="flink/your-username.com" />
+                <Form.Label>Youtube</Form.Label>
+                <Form.Control placeholder="Copy and paste the url here" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="email" placeholder="Choose a password" />
+            <Form.Group className="mb-3">
+                <Form.Label>Tik Tok</Form.Label>
+                <Form.Control placeholder="Copy and paste the url here" />
             </Form.Group>
-            <button className="green-button">
-              Create Account
+            <button className="green-button mt-5">
+              Done
             </button>
           </Form>
-            <p className="already-account">Already have an account? <Link to={"/"}>Sign in</Link></p>
         </div>
       </div>
     </div>

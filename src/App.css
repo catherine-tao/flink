@@ -45,3 +45,23 @@ h2 {
 }
 
 
+.green-left-panel-text {
+  max-width: 20%;
+  font-size: 18px;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 3rem;
+}
+
+.flower-image-panel {
+  position: fixed;
+  width: 40vw;
+  bottom: 0;
+  left: 10vw;
+}
+
+.white-panel-logo {
+  width: 10vw;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}

@@ -37,7 +37,7 @@ export default function Signup({ show }) {
         <div className="w-50 mt-5 mx-auto">
           <h1 className="h1-pink">Join Flink</h1>
           <Form onSubmit={handleSignup}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicEmailSignup">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 value={email}
@@ -60,7 +60,7 @@ export default function Signup({ show }) {
                 placeholder="flink/your-username.com"
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasicPasswordignup">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 value={password}

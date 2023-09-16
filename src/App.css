@@ -17,16 +17,37 @@ h1 {
 }
 
 h2 {
- color: black;
- font-family: 'Poppins';
- font-size: 40px;
+  color: black;
+  font-family: 'Poppins';
+  font-size: 40px;
+ }
+
+a {
+  color: var(--dark-green) !important;
+  text-decoration: none !important;
+}
+
+.h1-pink {
+  color: #FF8AF3;
+  font-family: 'League Spartan';
+  font-weight: 400;
+  font-size: 60px;
 }
 
 .green-button {
-  background-color: var(--dark-green);
+  background-color: var(--dark-green) !important;
   color: white;
-  padding: 5px;
+  padding: 8px;
   border-radius: 10px;
+  font-family: "Poppins";
+  width: 100%;
+  border: none;
+  margin-top: 2rem;
+}
+
+.already-account {
+  margin-top: 4rem;
+  text-align: center;
 }
 
 .background-green {
@@ -64,4 +85,10 @@ h2 {
   width: 10vw;
   margin-top: 2rem;
   margin-left: 2rem;
+}
+
+.form-label {
+  margin-bottom: 0 !important;
+  font-family: 'Poppins';
+  color: black;
 }

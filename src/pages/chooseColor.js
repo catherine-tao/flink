@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import {useState} from 'react';
 import ChooseTemplate from "./chooseTemplate";
 
-export default function ChooseColor({ email }) {
+export default function ChooseColor({ email, socialLinks }) {
     const [selectedColor, setSelectedColor] = useState(1);
     const [allowProceed, setAllowProceed] = useState(false);
 
@@ -39,17 +39,15 @@ export default function ChooseColor({ email }) {
          
                 </div>
                 <div align-items="center">
-                    <Link to="/socials">
-                        <button className="green-button mt-5">
-                        Continue
-                        </button>
-                    </Link>
+                    <button className="green-button mt-5" onClick={() => setAllowProceed(true)}>
+                    Continue
+                    </button>
                 </div>
                 
                 </div>
             </div>
             </div>}
-            {allowProceed && <ChooseTemplate email={email}  />}
+            {allowProceed && <ChooseTemplate email={email} socialLinks={socialLinks}  />}
 
         </div>
     

@@ -158,3 +158,34 @@ a {
   padding-top: 50px;
 }
 
+.template-button {
+  border: none;
+  background-color: transparent;
+
+
+}
+
+.template-button:hover {
+  border: #FFE382;
+  background-color: transparent;  
+  border-radius: 15%;
+  border-style: dashed;
+  border-width: 4px;
+}
+
+.selected-template-button {
+  border: #FFE382;
+  background-color: transparent;  
+  border-radius: 15%;
+  border-style: dashed;
+  border-width: 4px;
+}
+
+.template-div {
+  display: flex;
+  width: 10px;
+  column-gap: 40px;
+  padding-top: 15%;
+  padding-bottom: 8%;
+
+}

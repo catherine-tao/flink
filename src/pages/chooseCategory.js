@@ -8,7 +8,7 @@ import {useState} from 'react';
 
 const categories = ['Creator', 'Influencer', 'Artist', 'Educator', 'Entertainer', 'Model', 'Non-Profit', 'Personal', 'Athlete', 'Musician', 'Other']
 
-export default function AddSocials({ show }) {
+export default function ChooseCategory({ show }) {
     const [selectedCategory, setSelectedCategory] = useState("")
 
     return (

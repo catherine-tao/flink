@@ -42,6 +42,7 @@ export default function DescribeYourself({ email}) {
         setBackgroundUrl(result.data[0].url);
         console.log(backgroundUrl); 
         console.log(result.data[0].url); 
+        setAllowProceed(true);
     
         // const res = await fetch(`http://localhost:3000/updateData/${{email}}`, {
         //     method: "POST",

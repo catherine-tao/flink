@@ -70,6 +70,55 @@ a {
 
 }
 
+.white-right-panel-editor {
+  background-color: white;
+  color: black;
+  width: 95vw;
+  height: 100vh;
+  margin-left: auto;
+  border-radius: 30px 0px 0px 30px;
+
+}
+
+.background-filter {
+  background-color: gray;
+}
+
+.editor-navbar {
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  margin-inline: 2rem;
+  top: 1.5rem;
+  height: 4rem;
+}
+
+.add-link-div {
+  border-radius: 10px;
+  border: 3px solid var(--Green, #517C60);
+  background: #F8FBF9;
+  padding: 40px;
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-link-button {
+  height: fit-content;
+  margin-left: 2rem;
+  text-wrap: nowrap;
+  border-radius: 10px;
+  background: var(--pink);
+  border: none;
+  padding: 8px 30px;
+}
+
+.navbar > .container {
+  column-gap: 2rem !important;
+  justify-content: left !important;
+}
+
 
 .green-left-panel-text {
   max-width: 20%;
@@ -126,4 +175,10 @@ a {
   background-color: transparent;
   border: none;
   color: var(--dark-green);
+}
+
+.exit-button {
+  background-color: transparent;
+  border: none;
+  margin-right: 2rem;
 }

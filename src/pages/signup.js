@@ -70,7 +70,9 @@ export default function Signup({ show }) {
                 placeholder="Choose a password"
               />
             </Form.Group>
-            <button className="green-button">Create Account</button>
+            <Link to="/profile">
+              <button className="green-button">Create Account</button>
+            </Link>
           </Form>
           <p className="already-account">
             Already have an account? <Link to={"/login"}>Sign in</Link>

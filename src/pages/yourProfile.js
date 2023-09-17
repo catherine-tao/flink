@@ -25,9 +25,11 @@ export default function YourProfile({ show }) {
                 <Form.Label>Profile Picture</Form.Label>
                 <Form.Control type="file" />
             </Form.Group>
-            <button className="green-button mt-5">
-              Submit
-            </button>
+            <Link to="/category">
+                <button className="green-button mt-5">
+                Continue
+                </button>
+            </Link>
           </Form>
         </div>
       </div>

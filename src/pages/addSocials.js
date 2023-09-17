@@ -29,9 +29,11 @@ export default function AddSocials({ show }) {
                 <Form.Label>Tik Tok</Form.Label>
                 <Form.Control placeholder="Copy and paste the url here" />
             </Form.Group>
+            <Link to="/describe-yourself">
             <button className="green-button mt-5">
               Continue
             </button>
+            </Link>
           </Form>
         </div>
       </div>

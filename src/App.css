@@ -230,7 +230,7 @@ a {
 }
 
 .closed-white-tab {
-  background-color: white;
+  /* background-color: white; */
   color: black;
   width: 4vw;
   height: 100vh;

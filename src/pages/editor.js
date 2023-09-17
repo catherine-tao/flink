@@ -134,8 +134,7 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
                 {!isAddingLink ? (
                   <button
                     onClick={() => setIsAddingLink(true)}
-                    className="green-button mt-5"
-                  >
+                    className="green-button mt-5">
                     Add Link
                   </button>
                 ) : (
@@ -163,6 +162,7 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
         })}
     </div>
                   </div>
+
                 )}
               </>
               {productUrls &&

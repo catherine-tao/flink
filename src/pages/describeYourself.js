@@ -7,8 +7,6 @@ import LoadingBackground from "./loadingBackground";
 import { Link } from "react-router-dom";
 
 
-
-
 export default function DescribeYourself({ email}) {
     const [isLoading, setIsLoading] = useState(false);
     const [isFilled, setIsFIlled] = useState(false);
@@ -28,7 +26,7 @@ export default function DescribeYourself({ email}) {
         
         const OpenAI = require("openai");
         const openai = new OpenAI({
-            apiKey: process.env.API_KEY,
+            apiKey: process.env.REACT_APP_OPENAI_API_KEY,
             dangerouslyAllowBrowser: true
         });
 

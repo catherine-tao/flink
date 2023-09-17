@@ -9,10 +9,10 @@ function Background() {
         const email = "hi"
 
         console.log("reacched");
-        
+
         const OpenAI = require("openai");
         const openai = new OpenAI({
-            apiKey: "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",
+            apiKey: process.env.REACT_APP_OPENAI_API_KEY,
             dangerouslyAllowBrowser: true
         });
 
@@ -29,15 +29,15 @@ function Background() {
         console.log(backgroundUrl); 
         console.log(result.data[0].url); 
     
-        const res = await fetch(`http://localhost:3000/updateData/${email}`, {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                backgroundUrl,
-            }),
-        });
+        // const res = await fetch(`http://localhost:3000/updateData/${email}`, {
+        //     method: "POST",
+        //     headers: {
+        //     "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({
+        //         backgroundUrl,
+        //     }),
+        // });
 
     }
 

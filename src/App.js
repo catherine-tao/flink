@@ -20,7 +20,7 @@ function App() {
         <Signup />
         <Login />
         <Prompt />
-        <DescribeYourself/>
+        <DescribeYourself />
       </div>
     </BrowserRouter>
   );

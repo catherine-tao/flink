@@ -5,9 +5,10 @@ import Logo from "../assets/Logo.svg"
 import Form from 'react-bootstrap/Form';
 import LoadingBackground from "./loadingBackground";
 import { Link } from "react-router-dom";
+import AddSocials from "./addSocials";
 
 
-export default function DescribeYourself({ email}) {
+export default function DescribeYourself({ email, socialLinks}) {
     const [isLoading, setIsLoading] = useState(false);
     const [isFilled, setIsFIlled] = useState(false);
     
@@ -17,6 +18,11 @@ export default function DescribeYourself({ email}) {
     const [word1, setword1] = useState("");
     const [word2, setword2] = useState("");
     const [word3, setword3] = useState("");
+
+    const handleClick = () => {
+      generate();
+      setAllowProceed(true);
+    };
  
 
     const generate = async(e) => {
@@ -41,8 +47,7 @@ export default function DescribeYourself({ email}) {
 
         setBackgroundUrl(result.data[0].url);
         console.log(backgroundUrl); 
-        console.log(result.data[0].url); 
-    
+        console.log(result.data[0].url);     
         // const res = await fetch(`http://localhost:3000/updateData/${{email}}`, {
         //     method: "POST",
         //     headers: {
@@ -71,7 +76,7 @@ export default function DescribeYourself({ email}) {
           <p className="page-description mt-4 mb-0">We will use this to generate a unique look for your landing page.</p>
           <Form>
             <Form.Group className="mb-3">
-                <Form.Label>1</Form.Label>
+                <Form.Label></Form.Label>
                 <Form.Control placeholder="Your first word"
                 value={word1}
                 onChange={(e) => {
@@ -80,7 +85,6 @@ export default function DescribeYourself({ email}) {
                 }}/>
             </Form.Group>
             <Form.Group className="mb-3">
-                <Form.Label>2</Form.Label>
                 <Form.Control placeholder="Your second word"
                  value={word2}
                  onChange={(e) => {
@@ -89,7 +93,6 @@ export default function DescribeYourself({ email}) {
                  }} />
             </Form.Group>
             <Form.Group className="mb-3">
-                <Form.Label>3</Form.Label>
                 <Form.Control placeholder="Your third word" 
                  value={word3}
                  onChange={(e) => {
@@ -97,7 +100,7 @@ export default function DescribeYourself({ email}) {
                    console.log("word3", word3);
                  }}/>
             </Form.Group>
-            <button className="green-button mt-5" onClick={generate}>
+            <button className="green-button mt-5" onClick={handleClick}>
               Continue
             </button>
           </Form>

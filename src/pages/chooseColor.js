@@ -8,13 +8,10 @@ import Template3 from "../assets/Template3.png"
 import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 import {useState} from 'react';
-import ChooseColor from "./chooseColor";
-import LoadingBackground from "./loadingBackground";
-import DescribeYourself from "./describeYourself";
+import ChooseTemplate from "./chooseTemplate";
 
-
-export default function ChooseTemplate({ email }) {
-    const [selectedTemplate, setSelectedTemplate] = useState(1);
+export default function ChooseColor({ email }) {
+    const [selectedColor, setSelectedColor] = useState(1);
     const [allowProceed, setAllowProceed] = useState(false);
 
     return (
@@ -25,20 +22,21 @@ export default function ChooseTemplate({ email }) {
             <div className="white-right-panel">
                 <img className="white-panel-logo" src={Logo}/>
                 <div className="w-50 mt-5 mx-auto">
-                <h1 className="h1-pink mb-0">Choose a template</h1>
-                <div className="template-div">
+                <h1 className="h1-pink mb-0">Choose a color</h1>
+                <div className="color-button">
                     {/* {categories.map((category) => 
                         <button onClick={() => {setSelectedTemplate(category)}} 
                         className={category == selectedCategory ? "category-button-selected category-button" : "category-button"}>
                         {category}
                         </button>
                     )} */}
-                    <button onClick={() => {setSelectedTemplate(1)}} className={1 == selectedTemplate? "selected-template-button": "template-button"}><img src={Template1} alt="Template 1" 
-                        /> </button>
-                    <button onClick={() => {setSelectedTemplate(2)}} className={2 == selectedTemplate? "selected-template-button": "template-button"}><img src={Template2} alt="Template 2" 
-                        /> </button>
-                    <button onClick={() => {setSelectedTemplate(3)}} className={3 == selectedTemplate? "selected-template-button": "template-button"}><img src={Template3} alt="Template 3"
-                       /> </button>
+                    <Form.Control
+                        type="color"
+                        id="exampleColorInput"
+                        defaultValue="#563d7c"
+                        title="Choose your color"
+                    />
+         
                 </div>
                 <div align-items="center">
                     <Link to="/socials">
@@ -51,7 +49,7 @@ export default function ChooseTemplate({ email }) {
                 </div>
             </div>
             </div>}
-            {allowProceed && <DescribeYourself email={email}  />}
+            {allowProceed && <ChooseTemplate email={email}  />}
 
         </div>
     

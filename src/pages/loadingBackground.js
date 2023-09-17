@@ -5,7 +5,7 @@ import Logo from "../assets/Logo.svg"
 import Form from 'react-bootstrap/Form';
 import Prompt from './Prompt';
 
-export default function LoadingBackground({email, backgroundUrl}) {
+export default function LoadingBackground({ email, colorTheme, insta, youtube, tiktok, backgroundUrl}) {
     const [loadingProgress, setLoadingProgress] = useState(0);
     const [allowProceed, setAllowProceed] = useState(false);
     console.log("loading email", email)
@@ -42,7 +42,7 @@ export default function LoadingBackground({email, backgroundUrl}) {
           <div className="loading-bar-padding">
             <LoadingBar progress={loadingProgress} />
           </div>
-          {allowProceed && <Prompt email={email}/>}
+          {allowProceed && <Prompt email={email} colorTheme={colorTheme} insta={insta} youtube={youtube} tiktok={tiktok}/>}
         </div>
       </div>
     </div>

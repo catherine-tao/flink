@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Prompt({ email }) {
+function Prompt({ email , colorTheme, insta, youtube, tiktok}) {
   const [promptURL, setPromptURL] = useState("");
   const [productUrls, setProductUrls] = useState([]);
   const [backgroundUrlLink, setBackgroundUrlLink] = useState("");

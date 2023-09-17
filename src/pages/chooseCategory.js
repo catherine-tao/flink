@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import AddSocials from "./addSocials";
 import ChooseColor from "./chooseColor";
+import ChooseTemplate from "./chooseTemplate";
 
 const categories = [
   "Creator",
@@ -64,7 +65,7 @@ export default function ChooseCategory({ email }) {
           </div>
         </div>
       ) : (
-        <AddSocials email={email}/>
+        <ChooseTemplate email={email}/>
       )}
     </div>
   );

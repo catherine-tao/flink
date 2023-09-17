@@ -6,9 +6,14 @@ import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import DescribeYourself from "./describeYourself";
 
-export default function AddSocials({ email }) {
+export default function AddSocials({ email, colorTheme }) {
   const [proceed, setProceed] = useState(false);
+  const [insta, setInsta] = useState("")
+  const [youtube, setYoutube] = useState("")
+  const [tiktok, setTiktok] = useState("")
+
   console.log("social email", email);
+
   return (
     <div>
       {!proceed ? (
@@ -28,15 +33,15 @@ export default function AddSocials({ email }) {
               <Form>
                 <Form.Group className="mb-3">
                   <Form.Label>Instagram</Form.Label>
-                  <Form.Control placeholder="Copy and paste the url here" />
+                  <Form.Control onChange={(e) => setInsta(e.target.value)} placeholder="Copy and paste the url here" />
                 </Form.Group>
                 <Form.Group className="mb-3">
                   <Form.Label>Youtube</Form.Label>
-                  <Form.Control placeholder="Copy and paste the url here" />
+                  <Form.Control onChange={(e) => setYoutube(e.target.value)} placeholder="Copy and paste the url here" />
                 </Form.Group>
                 <Form.Group className="mb-3">
                   <Form.Label>Tik Tok</Form.Label>
-                  <Form.Control placeholder="Copy and paste the url here" />
+                  <Form.Control onChange={(e) => setTiktok(e.target.value)} placeholder="Copy and paste the url here" />
                 </Form.Group>
                   <button onClick={() => setProceed(true)} className="green-button mt-5">Continue</button>
               </Form>
@@ -44,7 +49,7 @@ export default function AddSocials({ email }) {
           </div>
         </div>
       ) : (
-        <DescribeYourself email={email} />
+        <DescribeYourself email={email} colorTheme={colorTheme} insta={insta} youtube={youtube} tiktok={tiktok} />
       )}
     </div>
     

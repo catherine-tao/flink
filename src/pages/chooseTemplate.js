@@ -13,7 +13,7 @@ import LoadingBackground from "./loadingBackground";
 import DescribeYourself from "./describeYourself";
 
 
-export default function ChooseTemplate({ email }) {
+export default function ChooseTemplate({ email, socialLinks }) {
     const [selectedTemplate, setSelectedTemplate] = useState(1);
     const [allowProceed, setAllowProceed] = useState(false);
 
@@ -41,17 +41,15 @@ export default function ChooseTemplate({ email }) {
                        /> </button>
                 </div>
                 <div align-items="center">
-                    <Link to="/socials">
-                        <button className="green-button mt-5">
-                        Continue
-                        </button>
-                    </Link>
+                    <button className="green-button mt-5" onClick={() => setAllowProceed(true)}>
+                    Continue
+                    </button>
                 </div>
                 
                 </div>
             </div>
             </div>}
-            {allowProceed && <DescribeYourself email={email}  />}
+            {allowProceed && <DescribeYourself email={email} socialLinks={socialLinks}  />}
 
         </div>
     

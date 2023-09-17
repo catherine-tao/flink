@@ -9,6 +9,7 @@ import Nav from 'react-bootstrap/Nav';
 import Exit from '../assets/exit.svg';
 import Trash from '../assets/trash.svg';
 import Chevron from "../assets/chevron.svg"
+import Profile from "../assets/stephanie.jpeg"
 
 export default function Editor({ email }) {
     const [promptURL, setPromptURL] = useState("");
@@ -79,7 +80,7 @@ export default function Editor({ email }) {
     };
 
     return (
-    <div className="background-filter vh-100">
+    <div className="background-filter">
       {!isPreview ? 
      <div className="white-right-panel-editor">
       <button style={{transform: "rotate(180deg)"}} className="chevron-button" onClick={() => setIsPreview(true)}>
@@ -143,11 +144,52 @@ export default function Editor({ email }) {
         </div> : 
          <div style={{marginTop: "10%"}} className="w-50 mx-auto text-center"><h1>{navSelected} Coming Soon</h1></div> }
       </div> : 
+      <>
         <div className="closed-white-tab">
           <button className="chevron-button" onClick={() => setIsPreview(false)}>
             <img style={{width: "1rem"}} src={Chevron}></img>
           </button>
         </div>
+        <Navbar className="editor-navbar">
+            <Container>
+            <Nav.Link>Instagram</Nav.Link>
+            <Nav.Link>Youtube</Nav.Link>
+            <Nav.Link>Tik Tok</Nav.Link>
+            </Container>
+        </Navbar>
+        <div className="landing-div">
+            <div className="text-div">
+              <h1 className="landing-h1">STEPHANIE SOO</h1>
+              <h2 className="landing-h2">Vlogger. Beauty. Lifestyle.</h2>
+              <button className="explore-button">Explore</button>
+            </div>
+            <img className="profile-picture" src={Profile}></img>
+        </div>
+        <div className="links-div">
+        <h1 className="mb-4">Explore</h1>
+        <div className="d-flex" style={{columnGap: "50px"}}>
+          <a href="#">
+            <div className="item-link-box">
+            <p style={{fontWeight: "600"}}>Amazon Fleece Zip</p>
+            <p>Classic and comfortable Amazon Essentials Men's Quarter-Zip Sweater in various heathered colors. 
+              Elevate your style effortlessly with this versatile piece."</p>
+            </div>
+          </a>
+          <div className="item-link-box">
+          <p style={{fontWeight: "600"}}>Amazon Fleece Zip</p>
+          <p>Classic and comfortable Amazon Essentials Men's Quarter-Zip Sweater in various heathered colors. 
+            Elevate your style effortlessly with this versatile piece."</p>
+          </div>
+          <div className="item-link-box">
+          <p style={{fontWeight: "600"}}>Amazon Fleece Zip</p>
+          <p>Classic and comfortable Amazon Essentials Men's Quarter-Zip Sweater in various heathered colors. 
+            Elevate your style effortlessly with this versatile piece."</p>
+          </div>
+        </div>
+        </div>
+        
+        
+      </>
       }
     </div>
   );

@@ -5,6 +5,7 @@ import Logo from "../assets/Logo.svg"
 import Form from 'react-bootstrap/Form';
 import LoadingBackground from "./loadingBackground";
 import { Link } from "react-router-dom";
+const OpenAI = require("openai");
 
 
 export default function DescribeYourself({ email}) {
@@ -25,11 +26,8 @@ export default function DescribeYourself({ email}) {
  
 
     const generate = async(e) => {
-        e.preventDefault();
-
-        console.log("reacched");
+        console.log("reached");
         
-        const OpenAI = require("openai");
         const openai = new OpenAI({
             apiKey: process.env.REACT_APP_OPENAI_API_KEY,
             dangerouslyAllowBrowser: true
@@ -44,18 +42,20 @@ export default function DescribeYourself({ email}) {
             size: "1024x1024",
         })
 
-        setBackgroundUrl(result.data[0].url);
-        console.log(backgroundUrl); 
+        const backgroundUrl = result.data[0].url
+
+        setBackgroundUrl(backgroundUrl);
         console.log(result.data[0].url);     
-        // const res = await fetch(`http://localhost:3000/updateData/${{email}}`, {
-        //     method: "POST",
-        //     headers: {
-        //     "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         backgroundUrl,
-        //     }),
-        // } );
+        const res = await fetch(`http://localhost:3000/background/${email}`, {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                backgroundUrl: "http://url"
+            }),
+        });
+
        }
 
     return (

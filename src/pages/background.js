@@ -4,8 +4,7 @@ import { useState } from "react";
 function Background() {
     const [backgroundUrl, setBackgroundUrl] = useState("");
 
-    const generate = async(e) => {
-        e.preventDefault();
+    const generate = async() => {
         const email = "hi"
 
         console.log("reacched");
@@ -29,15 +28,15 @@ function Background() {
         console.log(backgroundUrl); 
         console.log(result.data[0].url); 
     
-        // const res = await fetch(`http://localhost:3000/updateData/${email}`, {
-        //     method: "POST",
-        //     headers: {
-        //     "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         backgroundUrl,
-        //     }),
-        // });
+        const res = await fetch(`http://localhost:3000/background/${email}`, {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                backgroundUrl,
+            }),
+        });
 
     }
 

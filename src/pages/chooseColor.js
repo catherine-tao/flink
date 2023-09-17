@@ -9,10 +9,13 @@ import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 import {useState} from 'react';
 import ChooseTemplate from "./chooseTemplate";
+import DescribeYourself from "./describeYourself";
+import AddSocials from "./addSocials";
 
 export default function ChooseColor({ email, socialLinks }) {
     const [selectedColor, setSelectedColor] = useState(1);
     const [allowProceed, setAllowProceed] = useState(false);
+    const [colorTheme, setColorTheme] = useState("")
 
     return (
         <div>
@@ -29,6 +32,7 @@ export default function ChooseColor({ email, socialLinks }) {
                         id="exampleColorInput"
                         defaultValue="#563d7c"
                         title="Choose your color"
+                        onChange={(e) => setColorTheme(e.target.value)}
                     />
          
                 </div>
@@ -41,7 +45,7 @@ export default function ChooseColor({ email, socialLinks }) {
                 </div>
             </div>
             </div>}
-            {allowProceed && <ChooseTemplate email={email} socialLinks={socialLinks}  />}
+            {allowProceed && <AddSocials colorTheme={colorTheme} email={email} />}
 
         </div>
     

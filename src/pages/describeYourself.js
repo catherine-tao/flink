@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import AddSocials from "./addSocials";
 const OpenAI = require("openai");
 
-export default function DescribeYourself({ email }) {
+export default function DescribeYourself({ email, colorTheme, insta, youtube, tiktok }) {
   console.log("describe email", email);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -130,7 +130,7 @@ export default function DescribeYourself({ email }) {
         </div>
       )}
       {allowProceed && (
-        <LoadingBackground email={email} backgroundUrl={backgroundUrl} />
+        <LoadingBackground email={email} colorTheme={colorTheme} insta={insta} youtube={youtube} tiktok={tiktok}  backgroundUrl={backgroundUrl} />
       )}
     </div>
   );

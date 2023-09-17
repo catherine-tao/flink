@@ -49,7 +49,7 @@ export default function ChooseTemplate({ email, socialLinks }) {
                 </div>
             </div>
             </div>}
-            {allowProceed && <DescribeYourself email={email} socialLinks={socialLinks}  />}
+            {allowProceed && <ChooseColor email={email} socialLinks={socialLinks}  />}
 
         </div>
     

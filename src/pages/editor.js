@@ -117,34 +117,22 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
                 {!isAddingLink ? (
                   <button
                     onClick={() => setIsAddingLink(true)}
-                    className="green-button mt-5"
-                  >
+                    className="green-button mt-5">
                     Add Link
                   </button>
                 ) : (
-                  <div className="add-link-div">
-                    
-                    <div>
-      <h1>Prompt</h1>
-      <form onSubmit={handlePromptSubmit}>
-        <input
-          value={promptURL}
-          onChange={(e) => setPromptURL(e.target.value)}
-        ></input>
-        <button>Submit</button>
-      </form>
-      {productUrls &&
-        productUrls.map((user) => {
-          return (
-            <div>
-              <h3>{user.title}</h3>
-              <p>{user.url}</p>
-              <button onClick={() => deleteUrl(user.url)}>Delete</button>
-            </div>
-          );
-        })}
-    </div>
-                  </div>
+          <div className="add-link-div">
+              <div>
+                <p style={{fontSize: "20px"}}>Enter URL</p>
+                <form onSubmit={handlePromptSubmit}>
+                  <input className="input-form"
+                    value={promptURL}
+                    onChange={(e) => setPromptURL(e.target.value)}
+                  ></input>
+                  <button className="add-link-button" onClick={() => setIsAddingLink(false)}>Add</button>
+                </form>
+                </div>
+              </div>
                 )}
               </>
               {productUrls &&

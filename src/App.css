@@ -110,9 +110,21 @@ a {
   background: #F8FBF9;
   padding: 40px;
   margin-top: 6rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.input-form {
+  border-radius: 10px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+  margin-top: 1rem;
+  padding: 5px;
+  width: 80%;
+}
+
+.form {
+  display: fle !important;
+  align-items: end !important;
 }
 
 .add-link-button {

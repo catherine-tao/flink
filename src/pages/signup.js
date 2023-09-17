@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom/client";
 import React, { useState } from "react";
 import Flowers from "../assets/Flowers.png";
 import Logo from "../assets/Logo.svg";
@@ -74,7 +73,7 @@ export default function Signup({ show }) {
             <button className="green-button">Create Account</button>
           </Form>
           <p className="already-account">
-            Already have an account? <Link to={"/"}>Sign in</Link>
+            Already have an account? <Link to={"/login"}>Sign in</Link>
           </p>
         </div>
       </div>

@@ -121,3 +121,9 @@ a {
   background-color: var(--dark-green);
   color: white;
 }
+
+.just-text-button {
+  background-color: transparent;
+  border: none;
+  color: var(--dark-green);
+}

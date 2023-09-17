@@ -22,14 +22,8 @@ export default function ChooseColor({ email, socialLinks }) {
             <div className="white-right-panel">
                 <img className="white-panel-logo" src={Logo}/>
                 <div className="w-50 mt-5 mx-auto">
-                <h1 className="h1-pink mb-0">Choose a color</h1>
+                <h1 className="h1-pink mb-0">Choose your branding colour</h1>
                 <div className="color-button">
-                    {/* {categories.map((category) => 
-                        <button onClick={() => {setSelectedTemplate(category)}} 
-                        className={category == selectedCategory ? "category-button-selected category-button" : "category-button"}>
-                        {category}
-                        </button>
-                    )} */}
                     <Form.Control
                         type="color"
                         id="exampleColorInput"

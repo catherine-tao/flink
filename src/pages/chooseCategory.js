@@ -28,9 +28,11 @@ export default function AddSocials({ show }) {
                 </button>
             )}
           </div>
+          <Link to="/socials">
             <button className="green-button mt-5">
               Continue
             </button>
+          </Link>
         </div>
       </div>
     </div>

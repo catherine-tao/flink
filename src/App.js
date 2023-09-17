@@ -1,25 +1,28 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
-import Signup from "./pages/signup";
-import React, { useState } from "react";
-import Prompt from "./pages/Prompt";
-import Login from "./pages/login";
-import YourProfile from "./pages/yourProfile";
-import AddSocials from "./pages/addSocials";
-import ChooseCategory from "./pages/chooseCategory";
-import { BrowserRouter } from "react-router-dom";
-import DescribeYourself from "./pages/describeYourself";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter, Link, Routes, Route} from 'react-router-dom'
+import React, {useState} from "react"
+
+import Login from './pages/login';
+import Signup from './pages/signup'
+import HomePage from "./pages/homepage"
+import ChooseCategory from "./pages/chooseCategory"
+import DescribeYourself from './pages/describeYourself';
+import YourProfile from './pages/yourProfile';
+import Socials from "./pages/addSocials"
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <ChooseCategory />
-        <AddSocials />
-        <Signup />
-        <Login />
-        <DescribeYourself/>
-      </div>
+        <Routes>
+          <Route exact path="/" element={<HomePage/>} />
+          <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/signup" element={<Signup/>} />
+          <Route exact path="/profile" element={<YourProfile/>} />
+          <Route exact path="/category" element={<ChooseCategory/>} />
+          <Route exact path="/describe-yourself" element={<DescribeYourself/>} />
+          <Route exact path="/socials" element={<Socials/>} />
+        </Routes>
     </BrowserRouter>
   );
 }

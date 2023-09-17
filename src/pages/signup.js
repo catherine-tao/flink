@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom/client";
 import React, { useState } from "react";
 import Flowers from "../assets/Flowers.png";
 import Logo from "../assets/Logo.svg";
@@ -78,14 +77,16 @@ export default function Signup({ show }) {
                 placeholder="Choose a password"
               />
             </Form.Group>
-            <button className="green-button">Create Account</button>
+            <Link to="/profile">
+              <button className="green-button">Create Account</button>
+            </Link>
           </Form>
           {
             successfulSignup &&
             <h3>You've created an account!</h3>
           }
           <p className="already-account">
-            Already have an account? <Link to={"/"}>Sign in</Link>
+            Already have an account? <Link to={"/login"}>Sign in</Link>
           </p>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Flowers from "../assets/Flowers.png"
 import Logo from "../assets/Logo.svg"
 import Form from 'react-bootstrap/Form';
 import Prompt from './Prompt';
+import Editor from './editor';
 
 export default function LoadingBackground({ email, colorTheme, insta, youtube, tiktok, backgroundUrl}) {
     const [loadingProgress, setLoadingProgress] = useState(0);
@@ -42,7 +43,7 @@ export default function LoadingBackground({ email, colorTheme, insta, youtube, t
           <div className="loading-bar-padding">
             <LoadingBar progress={loadingProgress} />
           </div>
-          {allowProceed && <Prompt email={email} colorTheme={colorTheme} insta={insta} youtube={youtube} tiktok={tiktok}/>}
+          {allowProceed && <Editor email={email} colorTheme={colorTheme} insta={insta} youtube={youtube} tiktok={tiktok}/>}
         </div>
       </div>
     </div>

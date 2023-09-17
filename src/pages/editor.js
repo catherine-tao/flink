@@ -11,7 +11,7 @@ import Trash from '../assets/trash.svg';
 import Chevron from "../assets/chevron.svg"
 import Profile from "../assets/stephanie.jpeg"
 
-export default function Editor({ email }) {
+export default function Editor({ email , colorTheme, insta, youtube, tiktok }) {
     const [promptURL, setPromptURL] = useState("");
     const [productUrls, setProductUrls] = useState([]);
     const [isAddingLink, setIsAddingLink] = useState(false)

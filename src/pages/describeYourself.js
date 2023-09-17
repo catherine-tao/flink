@@ -9,7 +9,6 @@ import AddSocials from "./addSocials";
 const OpenAI = require("openai");
 
 export default function DescribeYourself({ email, colorTheme, insta, youtube, tiktok }) {
-  console.log("describe email", email);
 
   const [isLoading, setIsLoading] = useState(false);
   const [isFilled, setIsFIlled] = useState(false);
@@ -27,7 +26,6 @@ export default function DescribeYourself({ email, colorTheme, insta, youtube, ti
   };
 
   const generate = async (e) => {
-    console.log("reached");
 
     const openai = new OpenAI({
         apiKey: process.env.REACT_APP_OPENAI_API_KEY,
@@ -46,7 +44,6 @@ export default function DescribeYourself({ email, colorTheme, insta, youtube, ti
     const backgroundUrl = result.data[0].url
 
     setBackgroundUrl(backgroundUrl);
-    console.log(result.data[0].url);
     
     const res = await fetch(`http://localhost:3000/background/${email}`, {
       method: "POST",
@@ -59,7 +56,6 @@ export default function DescribeYourself({ email, colorTheme, insta, youtube, ti
     });
 
     const data = await res.json();
-    console.log("back data", data);
   };
 
   return (
@@ -96,7 +92,6 @@ export default function DescribeYourself({ email, colorTheme, insta, youtube, ti
                       value={word1}
                       onChange={(e) => {
                         setword1(e.target.value);
-                        console.log("word1", word1);
                       }}
                     />
                   </Form.Group>
@@ -106,7 +101,6 @@ export default function DescribeYourself({ email, colorTheme, insta, youtube, ti
                       value={word2}
                       onChange={(e) => {
                         setword2(e.target.value);
-                        console.log("word2", word2);
                       }}
                     />
                   </Form.Group>
@@ -116,7 +110,6 @@ export default function DescribeYourself({ email, colorTheme, insta, youtube, ti
                       value={word3}
                       onChange={(e) => {
                         setword3(e.target.value);
-                        console.log("word3", word3);
                       }}
                     />
                   </Form.Group>

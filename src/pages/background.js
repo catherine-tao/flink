@@ -7,8 +7,6 @@ function Background() {
     const generate = async() => {
         const email = "hi"
 
-        console.log("reacched");
-
         const OpenAI = require("openai");
         const openai = new OpenAI({
             apiKey: process.env.REACT_APP_OPENAI_API_KEY,
@@ -25,8 +23,6 @@ function Background() {
         })
 
         setBackgroundUrl(result.data[0].url);
-        console.log(backgroundUrl); 
-        console.log(result.data[0].url); 
     
         const res = await fetch(`http://localhost:3000/background/${email}`, {
             method: "POST",
@@ -39,7 +35,6 @@ function Background() {
         });
 
         const data = await res.json();
-        console.log("back data", data)
 
     }
 

@@ -15,7 +15,6 @@ function Prompt({ email , colorTheme, insta, youtube, tiktok}) {
 
       const data = await res.json();
       const loadedUrls = data.productUrls;
-      console.log("loadedUrls", loadedUrls);
       setProductUrls(loadedUrls);
     };
 
@@ -29,7 +28,6 @@ function Prompt({ email , colorTheme, insta, youtube, tiktok}) {
 
       const data = await res.json();
       const backgroundUrl = data.backgroundUrl;
-      console.log("backgroundUrl", backgroundUrl);
       setBackgroundUrlLink(backgroundUrl);
     };
 
@@ -39,7 +37,6 @@ function Prompt({ email , colorTheme, insta, youtube, tiktok}) {
 
   const handlePromptSubmit = async (e) => {
     e.preventDefault();
-    console.log("promptURL", promptURL);
 
     const res = await fetch(`http://localhost:3000/prompt/${email}`, {
       method: "POST",
@@ -54,7 +51,6 @@ function Prompt({ email , colorTheme, insta, youtube, tiktok}) {
 
     const jsonData = await res.json();
     const userData = jsonData.userData;
-    console.log("userData", userData);
     if (userData) setProductUrls(userData);
   };
 
@@ -71,8 +67,6 @@ function Prompt({ email , colorTheme, insta, youtube, tiktok}) {
     });
 
     const data = await res.json();
-
-    console.log("deleted data", data.newProductsUrl);
 
     // const newUrls = productUrls.filter((item) => item != url);
     setProductUrls(data.newProductsUrl);

@@ -31,8 +31,6 @@ export default function Login({ show }) {
     //   localStorage.setItem("token", data.user);
     // }
 
-    console.log("data", data); // delete later
-
     if (data.signedIn) {
       setAllowProceed(true);
     } else {
@@ -60,7 +58,6 @@ export default function Login({ show }) {
                     value={email}
                     onChange={(e) => {
                       setEmail(e.target.value);
-                      console.log("email", email);
                     }}
                     type="email"
                     placeholder="Enter your email"
@@ -72,7 +69,6 @@ export default function Login({ show }) {
                     value={password}
                     onChange={(e) => {
                       setPassword(e.target.value);
-                      console.log("password", password);
                     }}
                     type="password"
                     placeholder="Choose a password"

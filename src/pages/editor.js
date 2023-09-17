@@ -32,7 +32,6 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
 
       const data = await res.json();
       const loadedUrls = data.productUrls;
-      console.log("loadedUrls", loadedUrls);
       setProductUrls(loadedUrls);
     };
 
@@ -46,7 +45,6 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
 
       const data = await res.json();
       const backgroundUrl = data.backgroundUrl;
-      console.log("backgroundUrl", backgroundUrl);
       setBackgroundUrlLink(backgroundUrl);
     };
 
@@ -64,14 +62,12 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
     };
 
     getProductUrls();
-    getBackgroundUrl()
-    getName()
-
+    getBackgroundUrl();
+    getName();
   }, []);
 
   const handlePromptSubmit = async (e) => {
     e.preventDefault();
-    console.log("promptURL", promptURL);
 
     const res = await fetch(`http://localhost:3000/prompt/${email}`, {
       method: "POST",
@@ -86,7 +82,6 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
 
     const jsonData = await res.json();
     const userData = jsonData.userData;
-    console.log("userData", userData);
     if (userData) setProductUrls(userData);
   };
 
@@ -104,14 +99,18 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
 
     const data = await res.json();
 
-    console.log("deleted data", data.newProductsUrl);
 
     // const newUrls = productUrls.filter((item) => item != url);
     setProductUrls(data.newProductsUrl);
   };
 
   return (
-    <div style={{backgroundImage: `url(${backgroundUrlLink})`, backgroundColor: "rgb(255,255,255,0.4)"}}>
+    <div
+      style={{
+        backgroundImage: `url(${backgroundUrlLink})`,
+        backgroundColor: "rgb(255,255,255,0.4)",
+      }}
+    >
       {!isPreview ? (
         <div className="white-right-panel-editor">
           <button
@@ -150,44 +149,31 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
                 {!isAddingLink ? (
                   <button
                     onClick={() => setIsAddingLink(true)}
-                    className="green-button mt-5">
+                    className="green-button mt-5"
+                  >
                     Add Link
                   </button>
                 ) : (
                   <div className="add-link-div">
-                    
-                    <div>
-      <h1>Prompt</h1>
-      <form onSubmit={handlePromptSubmit}>
-        <input
-          value={promptURL}
-          onChange={(e) => setPromptURL(e.target.value)}
-        ></input>
-        <button>Submit</button>
-      </form>
-      {productUrls &&
-        productUrls.map((user) => {
-          return (
-            <div>
-              <h3>{user.title}</h3>
-              <p>{user.url}</p>
-              <button onClick={() => deleteUrl(user.url)}>Delete</button>
-            </div>
-          );
-        })}
-    </div>
+                  <div>
+                    <p style={{fontSize: "20px"}}>Enter URL</p>
+                    <form className="form-force" onSubmit={handlePromptSubmit}>
+                      <input className="input-form"
+                        value={promptURL}
+                        onChange={(e) => setPromptURL(e.target.value)}
+                      ></input>
+                      <button className="add-link-button" onClick={() => setIsAddingLink(false)}>Add</button>
+                    </form>
+                    </div>
                   </div>
-
                 )}
               </>
               {productUrls &&
                 productUrls.map((link) => {
                   return (
                     <div className="link-display-div">
-                      <div>
-                        <p className="mb-0 font-weight-bold">{link.title}</p>
-                        <p className="mb-0">{link.url} </p>
-                      </div>
+                      <p className="mb-0 font-weight-bold">{link.title}</p>
+                      <p className="mb-0">{link.url.substring(0, 20)} </p>
                       <button
                         onClick={() => deleteUrl(link.url)}
                         className="exit-button"
@@ -227,7 +213,12 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
           <div className="landing-div">
             <div className="text-div">
               <h1 className="landing-h1">{name}</h1>
-              <button style={{backgroundColor: `${colorTheme}`}} className="explore-button">Explore</button>
+              <button
+                style={{ backgroundColor: `${colorTheme}` }}
+                className="explore-button"
+              >
+                Explore
+              </button>
             </div>
             <img className="profile-picture" src={Profile}></img>
           </div>
@@ -239,10 +230,10 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
                   return (
                     <div>
                       <a href={link.url}>
-                      <div className="item-link-box">
-                        <p style={{ fontWeight: "600" }}>{link.title}</p>
-                        <p>{link.description}</p>
-                      </div>
+                        <div className="item-link-box">
+                          <p style={{ fontWeight: "600" }}>{link.title}</p>
+                          <p>{link.description}</p>
+                        </div>
                       </a>
                     </div>
                   );

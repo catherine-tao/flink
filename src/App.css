@@ -211,8 +211,6 @@ a {
   background: #E1EAE4;
   border: none;
   padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
   margin-block: 1rem;
 }
 
@@ -362,4 +360,19 @@ a {
   width: 80%;
   margin-inline: auto;
   padding-bottom: 10%;
+}
+
+.input-form {
+  border-radius: 10px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+  margin-top: 1rem;
+  padding: 5px;
+  width: 80%;
+}
+
+.form-force {
+  align-items: end !important;
+  display: flex !important;
+  align-items: baseline !important;
 }

@@ -16,8 +16,6 @@ export default function LoadingBackground({
 }) {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [allowProceed, setAllowProceed] = useState(false);
-  console.log("loading email", email);
-  // console.log("loading backgroundUrl", backgroundUrl);
 
   useEffect(() => {
     // Simulate loading progress (e.g., using setTimeout)
@@ -25,7 +23,6 @@ export default function LoadingBackground({
       let progress = 0;
       const interval = setInterval(() => {
         progress += 2;
-        console.log("loading backgroundUrl", backgroundUrl);
 
         // if (backgroundUrl) setAllowProceed(true);
 

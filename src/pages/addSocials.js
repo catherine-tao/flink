@@ -12,8 +12,6 @@ export default function AddSocials({ email, colorTheme }) {
   const [youtube, setYoutube] = useState("")
   const [tiktok, setTiktok] = useState("")
 
-  console.log("social email", email);
-
   return (
     <div>
       {!proceed ? (

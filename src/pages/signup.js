@@ -14,7 +14,6 @@ export default function Signup({ show }) {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    console.log("hihihihihihihihihi")
 
     const res = await fetch("http://localhost:3000/signup", {
       method: "POST",
@@ -56,7 +55,6 @@ export default function Signup({ show }) {
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
-                  console.log("email", email);
                 }}
                 type="email"
                 placeholder="Enter your email"
@@ -78,7 +76,6 @@ export default function Signup({ show }) {
                 value={username}
                 onChange={(e) => {
                   setUsername(e.target.value);
-                  console.log("setUsername", setUsername);
                 }}
                 placeholder="flink/your-username.com"
               />
@@ -89,7 +86,6 @@ export default function Signup({ show }) {
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
-                  console.log("password", password);
                 }}
                 placeholder="Choose a password"
                 type="password"

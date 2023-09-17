@@ -26,13 +26,11 @@ function Signup() {
         <h4>Email</h4>
         <input value={email} onChange={(e) => {
           setEmail(e.target.value)
-          console.log("email", email)
         }}>
         </input>
         <h4>Password</h4>
         <input value={password} onChange={(e) => {
           setPassword(e.target.value)
-          console.log("password", password)
         }}>
         </input>
         <button>Submit</button>

@@ -25,7 +25,6 @@ const categories = [
 export default function ChooseCategory({ email }) {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [proceed, setProceed] = useState(false);
-  console.log("category email", email)
 
 
   return (

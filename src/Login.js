@@ -25,7 +25,6 @@ const Login = () => {
         //   localStorage.setItem("token", data.user);
         // }
 
-        console.log("data", data); // delete later
 
         if (data.signedIn) {
             setAllowProceed(true);
@@ -41,13 +40,11 @@ const Login = () => {
             <h4>Username</h4>
             <input value={email} onChange={(e) => {
               setEmail(e.target.value)
-              console.log("email", email)
             }}>
             </input>
             <h4>Password</h4>
             <input value={password} onChange={(e) => {
               setPassword(e.target.value)
-              console.log("password", password)
             }}>
             </input>
             <button>Submit</button>

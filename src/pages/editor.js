@@ -14,7 +14,7 @@ export default function Editor({ email }) {
     const [promptURL, setPromptURL] = useState("");
     const [productUrls, setProductUrls] = useState([]);
     const [isAddingLink, setIsAddingLink] = useState(false)
-    const [navSelected, setNavSelected] = useState("links")
+    const [navSelected, setNavSelected] = useState("Links")
     const [isPreview, setIsPreview] = useState(false)
 
     useEffect(() => {
@@ -96,13 +96,13 @@ export default function Editor({ email }) {
                 alt="Flink Logo"
                 />
             </Navbar.Brand>
-            <Nav.Link onClick={() => setNavSelected("links")}>Links</Nav.Link>
-            <Nav.Link onClick={() => setNavSelected("appearance")}>Appearance</Nav.Link>
-            <Nav.Link onClick={() => setNavSelected("analytics")}>Analytics</Nav.Link>
-            <Nav.Link onClick={() => setNavSelected("settings")}>Settings</Nav.Link>
+            <Nav.Link onClick={() => setNavSelected("Links")}>Links</Nav.Link>
+            <Nav.Link onClick={() => setNavSelected("Appearance")}>Appearance</Nav.Link>
+            <Nav.Link onClick={() => setNavSelected("Analytics")}>Analytics</Nav.Link>
+            <Nav.Link onClick={() => setNavSelected("Settings")}>Settings</Nav.Link>
             </Container>
         </Navbar>
-        { navSelected == "links" ?
+        { navSelected == "Links" ?
         <div className="w-50 mt-5 mx-auto">
             <>
             { !isAddingLink ?
@@ -141,7 +141,7 @@ export default function Editor({ email }) {
                 );
             })}
         </div> : 
-         <div style={{marginTop: "10%"}} className="w-50 mx-auto text-center"><h1>Coming Soon</h1></div> }
+         <div style={{marginTop: "10%"}} className="w-50 mx-auto text-center"><h1>{navSelected} Coming Soon</h1></div> }
       </div> : 
         <div className="closed-white-tab">
           <button className="chevron-button" onClick={() => setIsPreview(false)}>

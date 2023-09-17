@@ -82,7 +82,7 @@ export default function DescribeYourself({ email, colorTheme, insta, youtube, ti
             ) : (
               <div className="w-50 mt-5 mx-auto">
                 <h1 className="h1-pink mb-0">
-                  What are three words that describe what you do?
+                  What are three words to describe the look of your website?
                 </h1>
                 <p className="page-description mt-4 mb-0">
                   We will use this to generate a unique look for your landing

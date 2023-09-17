@@ -53,7 +53,7 @@ export default function LoadingBackground({
             <img className="white-panel-logo" src={Logo} />
             <div className="w-50 mt-5 mx-auto">
               <h1 className="h1-pink">
-                Generating your personal page background...
+                Generating your personal landing page...
               </h1>
               <div className="loading-bar-padding">
                 <LoadingBar progress={loadingProgress} />

@@ -17,6 +17,7 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
   const [isAddingLink, setIsAddingLink] = useState(false);
   const [navSelected, setNavSelected] = useState("Links");
   const [isPreview, setIsPreview] = useState(false);
+  const [backgroundUrlLink, setBackgroundUrlLink] = useState("");
 
   useEffect(() => {
     const getProductUrls = async () => {
@@ -33,7 +34,23 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
       setProductUrls(loadedUrls);
     };
 
+    const getBackgroundUrl = async () => {
+      const res = await fetch(`http://localhost:3000/background/${email}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const data = await res.json();
+      const backgroundUrl = data.backgroundUrl;
+      console.log("backgroundUrl", backgroundUrl);
+      setBackgroundUrlLink(backgroundUrl);
+    };
+
     getProductUrls();
+    getBackgroundUrl()
+
   }, []);
 
   const handlePromptSubmit = async (e) => {
@@ -78,7 +95,7 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
   };
 
   return (
-    <div className="background-filter">
+    <div style={{backgroundImage: `url(${backgroundUrlLink})`, background: "50%"}}>
       {!isPreview ? (
         <div className="white-right-panel-editor">
           <button
@@ -139,6 +156,7 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
             <div>
               <h3>{user.title}</h3>
               <p>{user.url}</p>
+              <img src={backgroundUrlLink}/>
               <button onClick={() => deleteUrl(user.url)}>Delete</button>
             </div>
           );

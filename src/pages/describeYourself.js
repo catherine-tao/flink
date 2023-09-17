@@ -34,7 +34,7 @@ export default function DescribeYourself({ email, colorTheme, insta, youtube, ti
         dangerouslyAllowBrowser: true
     });
 
-    const prompt = `generate a background image for ${word1}, ${word2}, ${word3}`;
+    const prompt = `generate a background image for ${word1}, ${word2}, ${word3} with opacity of 50%`;
 
     const result = await openai.images.generate
     ({

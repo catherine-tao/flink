@@ -10,6 +10,7 @@ import ChooseCategory from "./pages/chooseCategory"
 import DescribeYourself from './pages/describeYourself';
 import YourProfile from './pages/yourProfile';
 import Socials from "./pages/addSocials"
+import LoadingBackground from './pages/loadingBackground';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/category" element={<ChooseCategory/>} />
           <Route exact path="/describe-yourself" element={<DescribeYourself/>} />
           <Route exact path="/socials" element={<Socials/>} />
+          <Route exact path="/loading" element={<LoadingBackground/>} />
         </Routes>
     </BrowserRouter>
   );

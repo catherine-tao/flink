@@ -5,8 +5,8 @@ import Logo from "../assets/Logo.svg";
 import Form from "react-bootstrap/Form";
 import LoadingBackground from "./loadingBackground";
 import { Link } from "react-router-dom";
-const OpenAI = require("openai");
 import AddSocials from "./addSocials";
+const OpenAI = require("openai");
 
 export default function DescribeYourself({ email }) {
   console.log("describe email", email);

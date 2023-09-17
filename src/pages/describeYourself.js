@@ -5,9 +5,10 @@ import Logo from "../assets/Logo.svg"
 import Form from 'react-bootstrap/Form';
 import LoadingBackground from "./loadingBackground";
 import { Link } from "react-router-dom";
+import AddSocials from "./addSocials";
 
 
-export default function DescribeYourself({ email}) {
+export default function DescribeYourself({ email, socialLinks}) {
     const [isLoading, setIsLoading] = useState(false);
     const [isFilled, setIsFIlled] = useState(false);
     

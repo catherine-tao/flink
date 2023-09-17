@@ -39,7 +39,7 @@ export default function LoadingBackground({email, backgroundUrl}) {
           <div className="loading-bar-padding">
             <LoadingBar progress={loadingProgress} />
           </div>
-          {allowProceed && <h1>place next page here in code</h1>}
+          {allowProceed && <h1>{backgroundUrl}</h1>}
         </div>
       </div>
     </div>

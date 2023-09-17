@@ -37,7 +37,7 @@ a {
 }
 
 .green-button {
-  background-color: var(--dark-green) !important;
+  background-color: var(--dark-green);
   color: white;
   padding: 8px;
   border-radius: 10px;
@@ -45,6 +45,16 @@ a {
   width: 100%;
   border: none;
   margin-top: 2rem;
+}
+
+.green-button:hover {
+  background-color: var(--green);
+  color: white;
+}
+
+.green-button:active {
+  background-color: var(--green);
+  color: white;
 }
 
 .already-account {
@@ -147,3 +157,4 @@ a {
 .loading-bar-padding {
   padding-top: 50px;
 }
+

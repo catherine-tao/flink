@@ -4,7 +4,7 @@ import Flowers from "../assets/Flowers.png";
 import Logo from "../assets/Logo.svg";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import Prompt from "./Prompt";
+import Editor from "./editor";
 
 export default function Login({ show }) {
   const [email, setEmail] = useState("");
@@ -87,7 +87,7 @@ export default function Login({ show }) {
           </div>
         </div>
       )}
-      {allowProceed && <Prompt email={email}/>}
+      {allowProceed && <Editor email={email}/>}
     </div>
   );
 }

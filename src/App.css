@@ -81,6 +81,55 @@ a {
 
 }
 
+.white-right-panel-editor {
+  background-color: white;
+  color: black;
+  width: 95vw;
+  height: 100vh;
+  margin-left: auto;
+  border-radius: 30px 0px 0px 30px;
+
+}
+
+.background-filter {
+  background-color: gray;
+}
+
+.editor-navbar {
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  margin-inline: 2rem;
+  top: 1.5rem;
+  height: 4rem;
+}
+
+.add-link-div {
+  border-radius: 10px;
+  border: 3px solid var(--Green, #517C60);
+  background: #F8FBF9;
+  padding: 40px;
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-link-button {
+  height: fit-content;
+  margin-left: 2rem;
+  text-wrap: nowrap;
+  border-radius: 10px;
+  background: var(--pink);
+  border: none;
+  padding: 8px 30px;
+}
+
+.navbar > .container {
+  column-gap: 2rem !important;
+  justify-content: left !important;
+}
+
 
 .green-left-panel-text {
   max-width: 20%;
@@ -139,6 +188,44 @@ a {
   color: var(--dark-green);
 }
 
+.exit-button {
+  background-color: transparent;
+  border: none;
+  margin-right: 2rem;
+}
+
+.link-display-div {
+  border-radius: 10px;
+  background: #E1EAE4;
+  border: none;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1rem;
+}
+
+.trash-button {
+  background-color: transparent;
+  border: none;
+}
+
+.chevron-button {
+  position: absolute;
+  top: 50vh;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.closed-white-tab {
+  background-color: white;
+  color: black;
+  width: 3vw;
+  height: 100vh;
+  margin-left: auto;
+  border-radius: 30px 0px 0px 30px;
+}
+
 .loading-bar-container {
   width: 100%;
   height: 10px;
@@ -158,3 +245,45 @@ a {
   padding-top: 50px;
 }
 
+.template-button {
+  border: none;
+  background-color: transparent;
+
+
+}
+
+.template-button:hover {
+  border: #FFE382;
+  background-color: transparent;  
+  border-radius: 15%;
+  border-style: dashed;
+  border-width: 4px;
+}
+
+.selected-template-button {
+  border: #FFE382;
+  background-color: transparent;  
+  border-radius: 15%;
+  border-style: dashed;
+  border-width: 4px;
+}
+
+.template-div {
+  display: flex;
+  width: 10px;
+  column-gap: 40px;
+  padding-top: 15%;
+  padding-bottom: 8%;
+
+}
+
+.form-control-color {
+  width: 10rem !important;
+  height: 10rem !important;
+}
+
+.color-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}

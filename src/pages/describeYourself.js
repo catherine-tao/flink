@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import LoadingBackground from "./loadingBackground";
 import { Link } from "react-router-dom";
 const OpenAI = require("openai");
+import AddSocials from "./addSocials";
 
 export default function DescribeYourself({ email }) {
   console.log("describe email", email);
@@ -53,7 +54,7 @@ export default function DescribeYourself({ email }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        backgroundUrl: "http://url",
+        backgroundUrl
       }),
     });
 

@@ -30,7 +30,8 @@ export default function LoadingBackground({ email, colorTheme, insta, youtube, t
   }, []);
 
   return (
-    <div className="background-green vh-100">
+    <div>
+      {!allowProceed? <div className="background-green vh-100">
       <h2 className="green-left-panel-text">
         Flink helps generate personal landing pages to make your content
         appealing.
@@ -43,9 +44,10 @@ export default function LoadingBackground({ email, colorTheme, insta, youtube, t
           <div className="loading-bar-padding">
             <LoadingBar progress={loadingProgress} />
           </div>
-          {allowProceed && <Editor email={email} colorTheme={colorTheme} insta={insta} youtube={youtube} tiktok={tiktok}/>}
         </div>
       </div>
+    </div>: <Editor email={email} colorTheme={colorTheme} insta={insta} youtube={youtube} tiktok={tiktok}/>}
+    
     </div>
   );
 }

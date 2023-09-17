@@ -336,7 +336,6 @@ a {
 }
 
 .explore-button {
-  background-color: var(--dark-green);
   color: white;
   padding: 8px 80px;
   border-radius: 10px;

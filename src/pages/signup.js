@@ -9,6 +9,7 @@ export default function Signup({ show }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [successfulSignup, setSuccessfulSignup] = useState(false);
 
   const handleSignup = async (e) => {
@@ -24,6 +25,7 @@ export default function Signup({ show }) {
         email,
         username,
         password,
+        name
       }),
     });
     
@@ -60,6 +62,16 @@ export default function Signup({ show }) {
                 placeholder="Enter your email"
               />
             </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label>Full Name</Form.Label>
+                <Form.Control 
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+                placeholder="Enter your full name" />
+            </Form.Group>
+
             <Form.Group className="mb-3">
               <Form.Label>Username</Form.Label>
               <Form.Control

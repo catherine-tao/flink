@@ -19,6 +19,8 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
   const [isPreview, setIsPreview] = useState(false);
   const [backgroundUrlLink, setBackgroundUrlLink] = useState("");
 
+  const [name, setName] = useState("");
+
   useEffect(() => {
     const getProductUrls = async () => {
       const res = await fetch(`http://localhost:3000/prompt/${email}`, {
@@ -48,8 +50,22 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
       setBackgroundUrlLink(backgroundUrl);
     };
 
+    const getName = async () => {
+      const res = await fetch(`http://localhost:3000/prompt/name/${email}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const data = await res.json();
+      const fullName = data.name;
+      setName(fullName);
+    };
+
     getProductUrls();
     getBackgroundUrl()
+    getName()
 
   }, []);
 
@@ -95,7 +111,7 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
   };
 
   return (
-    <div style={{backgroundImage: `url(${backgroundUrlLink})`, background: "50%"}}>
+    <div style={{backgroundImage: `url(${backgroundUrlLink})`, backgroundColor: "rgb(255,255,255,0.4)"}}>
       {!isPreview ? (
         <div className="white-right-panel-editor">
           <button
@@ -155,7 +171,6 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
             <div>
               <h3>{user.title}</h3>
               <p>{user.url}</p>
-              <img src={backgroundUrlLink}/>
               <button onClick={() => deleteUrl(user.url)}>Delete</button>
             </div>
           );
@@ -211,9 +226,8 @@ export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
           </Navbar>
           <div className="landing-div">
             <div className="text-div">
-              <h1 className="landing-h1">STEPHANIE SOO</h1>
-              <h2 className="landing-h2">Vlogger. Beauty. Lifestyle.</h2>
-              <button className="explore-button">Explore</button>
+              <h1 className="landing-h1">{name}</h1>
+              <button style={{backgroundColor: `${colorTheme}`}} className="explore-button">Explore</button>
             </div>
             <img className="profile-picture" src={Profile}></img>
           </div>

@@ -14,13 +14,9 @@ export default function YourProfile({ show }) {
       <div className="white-right-panel">
         <img className="white-panel-logo" src={Logo}/>
         <div className="w-50 mt-5 mx-auto">
-          <h1 className="h1-pink mb-0">Your Profile</h1>
-          <p className="page-description">This info will be displayed at the fore front of your landing page.</p>
+          <h1 className="h1-pink mb-0">Your Profile Picture</h1>
+          <p className="page-description">This picture will be displayed at the fore front of your landing page.</p>
           <Form>
-            <Form.Group className="mb-3">
-                <Form.Label>Full Name</Form.Label>
-                <Form.Control placeholder="Enter your full name" />
-            </Form.Group>
             <Form.Group controlId="formFile" className="mb-3">
                 <Form.Label>Profile Picture</Form.Label>
                 <Form.Control type="file" />

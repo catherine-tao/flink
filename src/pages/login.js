@@ -66,7 +66,7 @@ export default function Login({ show }) {
                     placeholder="Enter your email"
                   />
                 </Form.Group>
-                <Form.Group className="mb-1" controlId="formBasicPasswordLogin">
+                <Form.Group className="mb-1" controlId="formBasicPassword">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     value={password}

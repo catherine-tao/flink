@@ -71,7 +71,7 @@ export default function Signup({ show }) {
                 placeholder="flink/your-username.com"
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPasswordignup">
+            <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 value={password}
@@ -80,6 +80,7 @@ export default function Signup({ show }) {
                   console.log("password", password);
                 }}
                 placeholder="Choose a password"
+                type="password"
               />
             </Form.Group>
             <button className="green-button">Submit</button>

@@ -8,7 +8,7 @@ import Template3 from "../assets/Template3.png"
 import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 import {useState} from 'react';
-import ChooseColor from "./chooseColor";
+//import ChooseColor from "./chooseColor";
 
 const categories = ['Creator', 'Influencer', 'Artist', 'Educator', 'Entertainer', 'Model', 'Non-Profit', 'Personal', 'Athlete', 'Musician', 'Other']
 
@@ -50,7 +50,7 @@ export default function ChooseTemplate({ email }) {
                 </div>
             </div>
             </div>}
-            {allowProceed && <ChooseColor email={email}  />}
+            {/* {allowProceed && <ChooseColor email={email}  />} */}
 
         </div>
     

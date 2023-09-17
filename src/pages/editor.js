@@ -9,7 +9,7 @@ import Nav from "react-bootstrap/Nav";
 import Exit from "../assets/exit.svg";
 import Trash from "../assets/trash.svg";
 import Chevron from "../assets/chevron.svg";
-import Profile from "../assets/stephanie.jpeg";
+import Profile from "../assets/dream.jpeg";
 
 export default function Editor({ email, colorTheme, insta, youtube, tiktok }) {
   const [promptURL, setPromptURL] = useState("");

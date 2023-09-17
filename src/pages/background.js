@@ -38,6 +38,9 @@ function Background() {
             }),
         });
 
+        const data = await res.json();
+        console.log("back data", data)
+
     }
 
     return (

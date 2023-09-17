@@ -3,6 +3,7 @@ import Flowers from "../assets/Flowers.png";
 import Logo from "../assets/Logo.svg";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
+import ChooseCategory from "./chooseCategory";
 
 export default function Signup({ show }) {
   const [email, setEmail] = useState("");
@@ -12,6 +13,8 @@ export default function Signup({ show }) {
 
   const handleSignup = async (e) => {
     e.preventDefault();
+    console.log("hihihihihihihihihi")
+
     const res = await fetch("http://localhost:3000/signup", {
       method: "POST",
       headers: {
@@ -32,7 +35,9 @@ export default function Signup({ show }) {
   };
 
   return (
-    <div className="background-green vh-100">
+    <div>
+      {!successfulSignup? 
+      <div className="background-green vh-100">
       <h2 className="green-left-panel-text">
         Flink helps generate personal landing pages to make your content
         appealing.
@@ -77,9 +82,7 @@ export default function Signup({ show }) {
                 placeholder="Choose a password"
               />
             </Form.Group>
-            <Link to="/profile">
-              <button className="green-button">Create Account</button>
-            </Link>
+            <button className="green-button">Submit</button>
           </Form>
           {
             successfulSignup &&
@@ -90,6 +93,8 @@ export default function Signup({ show }) {
           </p>
         </div>
       </div>
+    </div>: <ChooseCategory email={email}/>}
     </div>
+    
   );
 }

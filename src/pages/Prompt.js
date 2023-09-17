@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 function Prompt({ email }) {
   const [promptURL, setPromptURL] = useState("");
   const [productUrls, setProductUrls] = useState([]);
-
+  const [backgroundUrlLink, setBackgroundUrlLink] = useState("");
   useEffect(() => {
     const getProductUrls = async () => {
       const res = await fetch(`http://localhost:3000/prompt/${email}`, {
@@ -14,12 +14,27 @@ function Prompt({ email }) {
       });
 
       const data = await res.json();
-      const loadedUrls = data.productUrls
+      const loadedUrls = data.productUrls;
       console.log("loadedUrls", loadedUrls);
       setProductUrls(loadedUrls);
     };
 
+    const getBackgroundUrl = async () => {
+      const res = await fetch(`http://localhost:3000/background/${email}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const data = await res.json();
+      const backgroundUrl = data.backgroundUrl;
+      console.log("backgroundUrl", backgroundUrl);
+      setBackgroundUrlLink(backgroundUrl);
+    };
+
     getProductUrls();
+    getBackgroundUrl()
   }, []);
 
   const handlePromptSubmit = async (e) => {
@@ -38,10 +53,9 @@ function Prompt({ email }) {
     });
 
     const jsonData = await res.json();
-    const userData = jsonData.userData
-    console.log("userData", userData)
-    if(userData) setProductUrls(userData);
-    
+    const userData = jsonData.userData;
+    console.log("userData", userData);
+    if (userData) setProductUrls(userData);
   };
 
   const deleteUrl = async (url) => {
@@ -58,7 +72,7 @@ function Prompt({ email }) {
 
     const data = await res.json();
 
-    console.log("deleted data", data.newProductsUrl)
+    console.log("deleted data", data.newProductsUrl);
 
     // const newUrls = productUrls.filter((item) => item != url);
     setProductUrls(data.newProductsUrl);

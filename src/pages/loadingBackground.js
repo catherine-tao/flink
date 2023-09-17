@@ -3,10 +3,13 @@ import LoadingBar from './loadingBar';
 import Flowers from "../assets/Flowers.png"
 import Logo from "../assets/Logo.svg"
 import Form from 'react-bootstrap/Form';
+import Prompt from './Prompt';
 
 export default function LoadingBackground({email, backgroundUrl}) {
     const [loadingProgress, setLoadingProgress] = useState(0);
     const [allowProceed, setAllowProceed] = useState(false);
+    console.log("loading email", email)
+    console.log("loading backgroundUrl", backgroundUrl)
 
   useEffect(() => {
     // Simulate loading progress (e.g., using setTimeout)
@@ -39,7 +42,7 @@ export default function LoadingBackground({email, backgroundUrl}) {
           <div className="loading-bar-padding">
             <LoadingBar progress={loadingProgress} />
           </div>
-          {allowProceed && <h1>{backgroundUrl}</h1>}
+          {allowProceed && <Prompt email={email}/>}
         </div>
       </div>
     </div>

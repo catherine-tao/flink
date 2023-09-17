@@ -7,11 +7,15 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Exit from '../assets/exit.svg';
+import Trash from '../assets/trash.svg';
+import Chevron from "../assets/chevron.svg"
 
 export default function Editor({ email }) {
     const [promptURL, setPromptURL] = useState("");
     const [productUrls, setProductUrls] = useState([]);
     const [isAddingLink, setIsAddingLink] = useState(false)
+    const [navSelected, setNavSelected] = useState("links")
+    const [isPreview, setIsPreview] = useState(false)
 
     useEffect(() => {
         const getProductUrls = async () => {
@@ -76,7 +80,11 @@ export default function Editor({ email }) {
 
     return (
     <div className="background-filter vh-100">
+      {!isPreview ? 
      <div className="white-right-panel-editor">
+      <button style={{transform: "rotate(180deg)"}} className="chevron-button" onClick={() => setIsPreview(true)}>
+        <img style={{width: "1rem"}} src={Chevron}></img>
+      </button>
         <Navbar className="editor-navbar">
             <Container>
             <Navbar.Brand href="#home">
@@ -88,12 +96,13 @@ export default function Editor({ email }) {
                 alt="Flink Logo"
                 />
             </Navbar.Brand>
-            <Nav.Link href="#Link">Links</Nav.Link>
-            <Nav.Link href="#Appearance">Appearance</Nav.Link>
-            <Nav.Link href="#Analytics">Analytics</Nav.Link>
-            <Nav.Link href="#Settings">Settings</Nav.Link>
+            <Nav.Link onClick={() => setNavSelected("links")}>Links</Nav.Link>
+            <Nav.Link onClick={() => setNavSelected("appearance")}>Appearance</Nav.Link>
+            <Nav.Link onClick={() => setNavSelected("analytics")}>Analytics</Nav.Link>
+            <Nav.Link onClick={() => setNavSelected("settings")}>Settings</Nav.Link>
             </Container>
         </Navbar>
+        { navSelected == "links" ?
         <div className="w-50 mt-5 mx-auto">
             <>
             { !isAddingLink ?
@@ -120,15 +129,26 @@ export default function Editor({ email }) {
             {productUrls &&
                 productUrls.map((link) => {
                 return (
+                  <div className="link-display-div">
                     <div>
-                        <h3>{link.title}</h3>
-                        <p>{link.url}</p>
-                        <button onClick={() => deleteUrl(link.url)}>Delete</button>
+                      <p className="mb-0 font-weight-bold">Amazon Fleece Zip Up</p>
+                      <p className="mb-0">https://www.amazon.ca/Amazon-Essentials-Standard-Quarter </p>
                     </div>
+                    <button onClick={() => deleteUrl(link.url)} className="exit-button">
+                      <img src={Trash}></img>
+                    </button>
+                </div>
                 );
             })}
+        </div> : 
+         <div style={{marginTop: "10%"}} className="w-50 mx-auto text-center"><h1>Coming Soon</h1></div> }
+      </div> : 
+        <div className="closed-white-tab">
+          <button className="chevron-button" onClick={() => setIsPreview(false)}>
+            <img style={{width: "1rem"}} src={Chevron}></img>
+          </button>
         </div>
-      </div>
+      }
     </div>
   );
 }

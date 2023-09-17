@@ -103,3 +103,21 @@ a {
   color: var(--dark-green);
   margin-bottom: 2rem;
 }
+
+.category-button {
+  border-radius: 10px;
+  border: 3px solid var(--Light, #EAEED8);
+  background: var(--Light, #EAEED8);
+  padding: 5px 40px;
+  margin: 10px 20px 0px 0px;
+}
+
+.category-button-selected {
+  color: white;
+  background: var(--dark-green);
+}
+
+.category-button:hover {
+  background-color: var(--dark-green);
+  color: white;
+}

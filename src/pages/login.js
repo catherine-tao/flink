@@ -51,7 +51,7 @@ export default function Login({ show }) {
         <div className="w-50 mt-5 mx-auto">
           <h1 className="h1-pink">Login</h1>
           <Form onSubmit={handleLogin}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicEmailLogin">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 value={email}
@@ -63,7 +63,7 @@ export default function Login({ show }) {
                 placeholder="Enter your email"
               />
             </Form.Group>
-            <Form.Group className="mb-1" controlId="formBasicPassword">
+            <Form.Group className="mb-1" controlId="formBasicPasswordLogin">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 value={password}

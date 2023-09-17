@@ -6,6 +6,8 @@ import Prompt from './Prompt';
 import Login from './pages/login';
 import YourProfile from './pages/yourProfile';
 import AddSocials from './pages/addSocials';
+import ChooseCategory from './pages/chooseCategory'
+import DescribeYourself from './pages/describeYourself';
 import { BrowserRouter } from 'react-router-dom'
 import Background from './pages/background';
 
@@ -18,7 +20,7 @@ function App() {
         <Signup />
         <Login />
         <Prompt />
-        <Background />
+        <DescribeYourself/>
       </div>
     </BrowserRouter>
   );
